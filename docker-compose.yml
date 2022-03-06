@@ -1,15 +1,20 @@
-version: '3.9'
+version: '2.1'
 
 services:
-  app:
-    container_name: searchapp
-    build: .
-    ports:
-      - 8080:8080
-    volumes:
-      - ..:/searchapp
-    tty: true
-    restart: unless-stopped
+#  searchingapp:
+#    container_name: searchingapp
+#    build: .
+#    working_dir: /webfluxelastic
+#    ports:
+#      - 8080:8080
+#    volumes:
+#      - .:/webfluxelastic/searchingapp
+#    tty: true
+#    command: mvn clean spring-boot:run
+#    restart: unless-stopped
+#    depends_on:
+#      - elasticsearch
+#      - kibana
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
@@ -29,10 +34,10 @@ services:
         hard: 65536
     cap_add:
       - IPC_LOCK
-#    networks:
-#      backend:
-#        aliases:
-#          - "elasticsearch"
+    networks:
+      backend:
+        aliases:
+          - "elasticsearch"
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.7.0
@@ -43,7 +48,11 @@ services:
         - 5601:5601
     depends_on:
         - elasticsearch
-#    networks:
-#      backend:
-#          aliases:
-#            - "kibana"
+    networks:
+      backend:
+          aliases:
+            - "kibana"
+
+networks:
+  backend:
+    driver: bridge

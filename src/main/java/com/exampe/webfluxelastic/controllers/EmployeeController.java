@@ -30,7 +30,7 @@ public class EmployeeController {
         return employeeService.findByName(name);
     }
 
-    @GetMapping("/{organizationName}")
+    @GetMapping("by-organization/{organizationName}")
     public Flux<Employee> findAll(@PathVariable("organizationName")String organizationName){
         return employeeService.findByOrganization(organizationName);
     }

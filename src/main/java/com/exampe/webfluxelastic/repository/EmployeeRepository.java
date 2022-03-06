@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface EmployeeRepository extends ReactiveCrudRepository<Employee, Long> {
+public interface EmployeeRepository extends ReactiveCrudRepository<Employee, String> {
 
     Flux<Employee> findAllByOrganizationName(String organizationName);
     Flux<Employee> findAllByName(String name);
