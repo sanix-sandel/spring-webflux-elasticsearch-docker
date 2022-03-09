@@ -17,43 +17,43 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent){
-        Employee employee=new Employee();
-        employee.setPosition("HR");
-        employee.setName("NIcki");
-        employee.setAge(23);
-
-        Organization organization=new Organization();
-        organization.setName("GEO");
-        organization.setAddress("Tokyo");
-        organization.setId(1L);
-
-        Department department=new Department();
-        department.setId(2L);
-        department.setName("De");
-
-        employee.setOrganization(organization);
-        employee.setDepartment(department);
-
-        employeeRepository.save(employee).subscribe();
-
-        Employee employee1=new Employee();
-        employee1.setPosition("MANAGER");
-        employee1.setName("NIckiS");
-        employee1.setAge(23);
-
-        Organization organization1=new Organization();
-        organization1.setName("GEO ADVENTURES");
-        organization1.setAddress("Tokyo");
-        organization1.setId(1L);
-
-        Department department1=new Department();
-        department1.setId(2L);
-        department1.setName("De");
-
-        employee1.setOrganization(organization1);
-        employee1.setDepartment(department1);
-
-        employeeRepository.save(employee1).subscribe();
+//        Employee employee=new Employee();
+//        employee.setPosition("HR");
+//        employee.setName("NIcki");
+//        employee.setAge(23);
+//
+//        Organization organization=new Organization();
+//        organization.setName("GEO");
+//        organization.setAddress("Tokyo");
+//        organization.setId(1L);
+//
+//        Department department=new Department();
+//        department.setId(2L);
+//        department.setName("De");
+//
+//        employee.setOrganization(organization);
+//        employee.setDepartment(department);
+//
+//        employeeRepository.save(employee).subscribe();
+//
+//        Employee employee1=new Employee();
+//        employee1.setPosition("MANAGER");
+//        employee1.setName("NIckiS");
+//        employee1.setAge(23);
+//
+//        Organization organization1=new Organization();
+//        organization1.setName("GEO ADVENTURES");
+//        organization1.setAddress("Tokyo");
+//        organization1.setId(1L);
+//
+//        Department department1=new Department();
+//        department1.setId(2L);
+//        department1.setName("De");
+//
+//        employee1.setOrganization(organization1);
+//        employee1.setDepartment(department1);
+//
+//        employeeRepository.save(employee1).subscribe();
 
     }
 
