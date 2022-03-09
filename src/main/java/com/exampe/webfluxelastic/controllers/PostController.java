@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("employees")
+@RequestMapping("posts")
 public class PostController {
 
     private final PostService postService;

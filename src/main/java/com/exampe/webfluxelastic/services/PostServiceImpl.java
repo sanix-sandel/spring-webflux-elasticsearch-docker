@@ -21,8 +21,8 @@ public class PostServiceImpl implements PostService{
     public Mono<Post> save(PostDto postDto) {
         Post post=new Post();
         post.setContent(postDto.getContent());
-        post.setRating(post.getRating());
-        post.setTitle(post.getTitle());
+        post.setRating(postDto.getRating());
+        post.setTitle(postDto.getTitle());
         post.setViews(postDto.getViews());
         post.setDate(new Date());
         return postRepository.save(post);
